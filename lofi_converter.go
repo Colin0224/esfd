@@ -6,6 +6,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"time"
 )
 
 func check(err error) {
@@ -27,7 +28,15 @@ func main() {
 	defer os.RemoveAll(tmpDir)
 
 	inputPath := filepath.Join(tmpDir, "input.m4a")
-	outputPath := filepath.Join(tmpDir, "output.mp3")
+
+	// Create output directory if it doesn't exist
+	outputDir := "output"
+	err = os.MkdirAll(outputDir, 0755)
+	check(err)
+
+	// Use timestamp to create unique filename
+	timestamp := time.Now().Format("20060102_150405")
+	outputPath := filepath.Join(outputDir, fmt.Sprintf("lofi_%s.mp3", timestamp))
 
 	// Download audio using yt-dlp
 	cmdYt := exec.Command("yt-dlp", "-f", "bestaudio", "-o", inputPath, url)

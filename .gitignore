@@ -1,0 +1,13 @@
+# Build artifacts
+lofi-converter
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Output files
+output/
+
+# Temporary files
+*.tmp 
