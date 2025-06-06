@@ -1,6 +1,6 @@
-# YouTube to Lofi Converter
+# YouTube Note Extractor
 
-This project provides a simple web interface that converts a YouTube video to a lofi-style MP3.
+This project downloads audio from a YouTube URL and extracts a crude sequence of musical notes. The notes are synthesized into a WAV file that can be played back in the browser.
 
 ## Requirements
 
@@ -30,4 +30,4 @@ Then launch the Gradio interface:
 python app.py
 ```
 
-Paste a YouTube URL in the input field and press **Convert** to generate the lofi audio.
+Paste a YouTube URL in the input field and press **Convert** to analyze the track and play back the detected notes.
