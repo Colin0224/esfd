@@ -1,13 +1,19 @@
-# Build artifacts
-lofi-converter
-
-# Python cache
+# Python
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
+.Python
+env/
+venv/
+pip-wheel-metadata/
+.eggs/
+*.egg-info/
+*.egg
 
-# Output files
+# Output directory
 output/
 
-# Temporary files
-*.tmp 
+# OS-specific files
+.DS_Store
+Thumbs.db
